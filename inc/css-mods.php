@@ -59,14 +59,15 @@ function oxane_custom_css_mods() {
 	if ( get_theme_mod('oxane_body_font','Open Sans') ) :
 		echo "body { font-family: ".esc_html(get_theme_mod('oxane_body_font'))."; }";
 	endif;
-	
-	if ( get_theme_mod('oxane_site_titlecolor') ) :
-		echo ".site-title a { color: ".esc_html(get_theme_mod('oxane_site_titlecolor', '#000'))."; }";
+
+
+	if ( get_header_textcolor() ) :
+		echo "#masthead h1.site-title a { color: #".get_header_textcolor()."; }";
 	endif;
 	
 	
-	if ( get_theme_mod('oxane_header_desccolor','#000') ) :
-		echo ".site-description { color: ".esc_html(get_theme_mod('oxane_header_desccolor','#000'))."; }";
+	if ( get_theme_mod('oxane_header_desccolor','#000000') ) :
+		echo "#masthead h2.site-description { color: ".esc_html(get_theme_mod('oxane_header_desccolor','#000'))."; }";
 	endif;
 	
 	if ( get_theme_mod('oxane_custom_css') ) :
