@@ -82,4 +82,15 @@
       }
     }
   }
+  &:nth-child(even){
+    .featured-thumb{
+      float:right;
+    }
+    border-bottom:2px solid @top-bar;
+    background:darken(@onaccent, 2%);
+  }
+  &:nth-child(odd) {
+    border-bottom:2px solid @top-bar;
+    background:darken(@onaccent, 1%);
+  }
 }
