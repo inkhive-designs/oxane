@@ -22,7 +22,7 @@ function oxane_customize_register_design_layouts( $wp_customize ){
     );
 
     function oxane_sanitize_blog_layout( $input ) {
-        if ( in_array($input, array('grid','grid_2_column','grid_3_column','oxane') ) )
+        if ( in_array($input, array('grid','grid_2_column','grid_3_column','oxane','date', 'blogger') ) )
             return $input;
         else
             return '';
@@ -36,6 +36,8 @@ function oxane_customize_register_design_layouts( $wp_customize ){
             'type' => 'select',
             'choices' => array(
                 'oxane' => __('Oxane Theme Layout','oxane'),
+                'date' => __('Date Layout','oxane'),
+                'blogger' => __('Blogger Layout','oxane'),
                 'grid' => __('Basic Blog Layout','oxane'),
                 'grid_2_column' => __('Grid - 2 Column','oxane'),
                 'grid_3_column' => __('Grid - 3 Column','oxane'),
