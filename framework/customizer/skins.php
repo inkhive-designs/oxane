@@ -27,7 +27,6 @@ function oxane_customize_register_skin($wp_customize){
     );
 
     $skins = array( 'default' => __('Default(oxane)','oxane'),
-        'orange' =>  __('Orange','oxane'),
         'green' => __('Green','oxane'),
         'brown' => __('Brown', 'oxane'),
     );

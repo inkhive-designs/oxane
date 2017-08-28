@@ -70,4 +70,6 @@ jQuery(window).load(function() {
 		});
 	});
 	
-})( jQuery );		
+})( jQuery );
+
+jQuery('#m-ticker').webTicker();

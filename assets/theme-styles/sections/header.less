@@ -73,6 +73,7 @@
     padding: 5px;
     padding-top: 7px;
   }
+
   .social-icons a {
     margin-right: 5px;
     .transition(0.4s all ease);
@@ -99,6 +100,87 @@
         .transform(rotate(360deg));
         .transition(4s all ease);
       }
+    }
+  }
+
+  .social-icons .default {
+    display: inline-block;
+    vertical-align: middle;
+    transform: translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    backface-visibility: hidden;
+    position: relative;
+    &:before {
+      content: '';
+      position: absolute;
+      border: dotted 2px;
+      z-index:-1;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      animation-duration: 1s;
+    }
+    @media screen and (max-width: 767px) {
+      float: none;
+    }
+  }
+
+  .social-icons .style1 {
+    display: inline-block;
+    vertical-align: middle;
+    transform: translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    backface-visibility: hidden;
+    position: relative;
+    i:before {
+      color: @accent;
+    }
+    &:hover {
+      i {
+        &:before {
+          color:@onaccent;
+        }
+      }
+    }
+    &:before {
+      content: '';
+      position: absolute;
+      border: dotted 2px;
+      background: @onaccent;
+      z-index:-1;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      animation-duration: 1s;
+    }
+    &:hover:before {
+      animation-name: hvr-ripple-out;
+      color:@accent;
+    }
+    @media screen and (max-width: 767px) {
+      float: none;
+    }
+  }
+
+  .social-icons .style2 {
+    display: inline-block;
+    margin-right:8px;
+    vertical-align: middle;
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    position: relative;
+    box-shadow: 0 0 0 4px rgba(255,255,255,1);
+    overflow: hidden;
+    transition: background 0.3s, color 0.3s, box-shadow 0.3s;
+    &:hover {
+      background: @onaccent;
+      color: @accent;
+      box-shadow: 0 0 0 8px rgba(255,255,255,0.3);
+    }
+    @media screen and (max-width: 767px) {
+      float: none;
     }
   }
 
@@ -184,3 +266,4 @@
     }
   }
 }
+

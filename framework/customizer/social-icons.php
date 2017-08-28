@@ -6,6 +6,38 @@ function oxane_customize_register_social_icons($wp_customize){
         'priority' => 44,
     ));
 
+    $social_icon_styles = array(
+        'default' => __('Default', 'oxane'),
+        'style1' => __('Style 1', 'oxane'),
+        'style2' => __('Style 2', 'oxane'),
+    );
+
+    $wp_customize->add_setting('oxane_social_icon_style', array(
+        'default' => 'default',
+        'sanitize_callback' => 'oxane_sanitize_social_style'
+    ) );
+
+    function oxane_sanitize_social_style($input) {
+        $social_icon_styles = array(
+            'default',
+            'style1',
+            'style2',
+        );
+        if ( in_array($input, $social_icon_styles))
+            return $input;
+        else
+            return '';
+    }
+
+    $wp_customize->add_control('oxane_social_icon_style', array(
+            'setting' => 'oxane_social_icon_style',
+            'section' => 'oxane_social_section',
+            'label' => __('Social Icon Effects', 'oxane'),
+            'type' => 'select',
+            'choices' => $social_icon_styles,
+        )
+    );
+
     $social_networks = array( //Redefinied in Sanitization Function.
         'none' => __('-','oxane'),
         'facebook' => __('Facebook','oxane'),
