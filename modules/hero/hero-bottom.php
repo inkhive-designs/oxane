@@ -28,7 +28,7 @@
                         </div>
                     <?php endif; ?>
                     <?php if(get_theme_mod('oxane_hero2_button') != ''): ?>
-                        <a href="" class="more-button">
+                        <a href="<?php the_permalink(); ?>" class="more-button">
                             <?php echo get_theme_mod('oxane_hero2_button'); ?>
                         </a>
                     <?php endif;?>
