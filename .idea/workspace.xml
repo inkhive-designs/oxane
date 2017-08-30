@@ -22,21 +22,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="right-header-content.less" pinned="false" current-in-tab="true">
+      <file leaf-file-name="right-header-content.less" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assets/theme-styles/sections/right-header-content.less">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
+            <state relative-caret-position="306">
               <caret line="29" column="21" lean-forward="false" selection-start-line="29" selection-start-column="21" selection-end-line="29" selection-end-column="21" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="header.less" pinned="false" current-in-tab="false">
+      <file leaf-file-name="header.less" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/assets/theme-styles/sections/header.less">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="298">
-              <caret line="239" column="42" lean-forward="false" selection-start-line="239" selection-start-column="42" selection-end-line="239" selection-end-column="42" />
+            <state relative-caret-position="400">
+              <caret line="254" column="19" lean-forward="false" selection-start-line="254" selection-start-column="19" selection-end-line="254" selection-end-column="19" />
               <folding />
             </state>
           </provider>
@@ -131,8 +131,8 @@
         <option value="$PROJECT_DIR$/assets/theme-styles/sections/motion-bar.less" />
         <option value="$PROJECT_DIR$/assets/theme-styles/sections/footer-sidebar.less" />
         <option value="$PROJECT_DIR$/framework/customizer/header.php" />
-        <option value="$PROJECT_DIR$/assets/theme-styles/sections/header.less" />
         <option value="$PROJECT_DIR$/assets/theme-styles/sections/right-header-content.less" />
+        <option value="$PROJECT_DIR$/assets/theme-styles/sections/header.less" />
       </list>
     </option>
   </component>
@@ -792,12 +792,12 @@
       <workItem from="1503730620282" duration="24933000" />
       <workItem from="1503896963249" duration="31026000" />
       <workItem from="1503993305335" duration="19783000" />
-      <workItem from="1504072721075" duration="7589000" />
+      <workItem from="1504072721075" duration="8752000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="103770000" />
+    <option name="totallyTimeSpent" value="104933000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -1197,18 +1197,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/theme-styles/sections/header.less">
+    <entry file="file://$PROJECT_DIR$/assets/theme-styles/sections/right-header-content.less">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="298">
-          <caret line="239" column="42" lean-forward="false" selection-start-line="239" selection-start-column="42" selection-end-line="239" selection-end-column="42" />
+        <state relative-caret-position="306">
+          <caret line="29" column="21" lean-forward="false" selection-start-line="29" selection-start-column="21" selection-end-line="29" selection-end-column="21" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/theme-styles/sections/right-header-content.less">
+    <entry file="file://$PROJECT_DIR$/assets/theme-styles/sections/header.less">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="29" column="21" lean-forward="false" selection-start-line="29" selection-start-column="21" selection-end-line="29" selection-end-column="21" />
+        <state relative-caret-position="400">
+          <caret line="254" column="19" lean-forward="false" selection-start-line="254" selection-start-column="19" selection-end-line="254" selection-end-column="19" />
           <folding />
         </state>
       </provider>
