@@ -56,19 +56,29 @@
       width: 420px;
       overflow: hidden;
       position: relative;
-      li a {
-        color:@onaccent;
-      }
-      li:before {
-        padding:0 5px 0 15px;
-        content: "\f005";
-        font-family:"FontAwesome";
-        font-size:14px;
-        color:@onaccent;
+      li {
+        i{
+          padding:0 8px 0 10px;
+          color:@onaccent;
+        }
+        a {
+          color:@onaccent;
+        }
       }
     }
   }
-  @media screen and (max-width: 767px) {
-
+  @media screen and (max-width: 670px) {
+    .motion-head{
+      width: 100%;
+      border-bottom:3px solid @top-bar;
+      text-align:center;
+      &:before, &:after {
+        display: none;
+      }
+    }
+    .motion-content{
+      top: 54px;
+      padding-top: 0;
+    }
   }
 }

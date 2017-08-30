@@ -19,12 +19,14 @@ get_header(); ?>
 
 				<?php get_template_part( '/modules/content/content', 'page' ); ?>
 
-				<?php
-					// If comments are open or we have at least one comment, load up the comment template
-					if ( comments_open() || get_comments_number() ) :
-						comments_template();
-					endif;
-				?>
+                <?php
+                if( is_front_page() && get_theme_mod('oxane_disable_comments')) :
+                    // If comments are open or we have at least one comment, load up the comment template
+                    if ( comments_open() || get_comments_number() ) :
+                        comments_template();
+                    endif;
+                endif;
+                ?>
 
 			<?php endwhile; // end of the loop. ?>
 

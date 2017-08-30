@@ -4,7 +4,7 @@ function oxane_customize_register_header($wp_customize){
     //Logo Settings
     $wp_customize->add_section( 'title_tagline' , array(
         'title'      => __( 'Title, Tagline & Logo', 'oxane' ),
-        'priority'   => 30,
+        'priority'   => 10,
     ) );
 
 
@@ -34,43 +34,15 @@ function oxane_customize_register_header($wp_customize){
         return $option->value() == true;
     }
 
-
-//
-//    //Replace Header Text Color with, separate colors for Title and Description
-//    //Override oxane_site_titlecolor
-//    $wp_customize->remove_control('display_header_text');
-//    $wp_customize->remove_setting('header_textcolor');
-//    $wp_customize->add_setting('oxane_site_titlecolor', array(
-//        'default'     => '#000',
-//        'sanitize_callback' => 'sanitize_hex_color',
-//    ));
-//
-//    $wp_customize->add_control(new WP_Customize_Color_Control(
-//            $wp_customize,
-//            'oxane_site_titlecolor', array(
-//            'label' => __('Site Title Color','oxane'),
-//            'section' => 'colors',
-//            'settings' => 'oxane_site_titlecolor',
-//            'type' => 'color'
-//        ) )
-//    );
-//
-//    $wp_customize->add_setting('oxane_header_desccolor', array(
-//        'default'     => '#000',
-//        'sanitize_callback' => 'sanitize_hex_color',
-//    ));
-//
-//    $wp_customize->add_control(new WP_Customize_Color_Control(
-//            $wp_customize,
-//            'oxane_header_desccolor', array(
-//            'label' => __('Site Tagline Color','oxane'),
-//            'section' => 'colors',
-//            'settings' => 'oxane_header_desccolor',
-//            'type' => 'color'
-//        ) )
-//    );
+    $wp_customize->add_panel('oxane_header_panel', array(
+            'title' => __('Header Settings', 'oxane'),
+            'priority' => 30,
+        )
+    );
 
     //Settings for Header Image
+    $wp_customize->get_section('header_image')->panel = 'oxane_header_panel';
+
     $wp_customize->add_setting( 'oxane_himg_style' , array(
         'default'     => 'cover',
         'sanitize_callback' => 'oxane_sanitize_himg_style'
@@ -171,5 +143,77 @@ function oxane_customize_register_header($wp_customize){
         $option = $control->manager->get_setting('oxane_hide_title_tagline');
         return $option->value() == false ;
     }
+
+    //Choices icons, menu, custom text
+    $wp_customize->add_section('oxane_right_header_content_section', array(
+        'title' => __('Right Header Content', 'oxane'),
+        'priority' => 100,
+        'panel' => 'oxane_header_panel',
+    ));
+
+    $wp_customize->add_setting('oxane_replace_search_bar', array(
+        'sanitize_callback' => 'oxane_sanitize_checkbox',
+    ));
+
+    $wp_customize->add_control('oxane_replace_search_bar', array(
+        'setting' => 'oxane_replace_search_bar',
+        'section' => 'oxane_right_header_content_section',
+        'label' => __('Replace Search Bar ', 'oxane'),
+        'description' => __('You can Replace search bar with your custom short menu or contact text.', 'oxane'),
+        'type' => 'checkbox',
+        'default' => false
+    ));
+
+    $wp_customize->add_setting('oxane_short_menu', array(
+        'default' => true,
+        'sanitize_callback' => 'oxane_sanitize_checkbox',
+    ));
+
+    $wp_customize->add_control('oxane_short_menu', array(
+        'setting' => 'oxane_short_menu',
+        'section' => 'oxane_right_header_content_section',
+        'label' => __('Enable Short Menu', 'oxane'),
+        'description' => __('You can add a Short Menu here. Try to avoid menus which have more than 2 items.', 'oxane'),
+        'type' => 'checkbox',
+        'default' => false,
+        'active_callback' => 'oxane_disable_search_bar',
+    ));
+
+    $wp_customize->add_setting('oxane_email_text', array(
+        'default' => '',
+        'sanitize_callback' => 'sanitize_text_field'
+    ));
+
+    $wp_customize->add_control('oxane_email_text', array(
+        'setting' => 'oxane_email_text',
+        'section' => 'oxane_right_header_content_section',
+        'label' => __('Enter Your Email', 'oxane'),
+        'description' => __('Enter email id to display.', 'oxane'),
+        'type' => 'text',
+        'active_callback' => 'oxane_disable_search_bar',
+    ));
+
+    $wp_customize->add_setting('oxane_mobile_text', array(
+        'default' => '',
+        'sanitize_callback' => 'sanitize_text_field'
+    ));
+
+    $wp_customize->add_control('oxane_mobile_text', array(
+        'setting' => 'oxane_mobile_text',
+        'section' => 'oxane_right_header_content_section',
+        'label' => __('Enter Mobile/Phone Number', 'oxane'),
+        'description' => __('Enter mobile number or phone number to display.', 'oxane'),
+        'type' => 'text',
+        'active_callback' => 'oxane_disable_search_bar',
+    ));
+
+
+    /* Active Callback Function */
+    function oxane_disable_search_bar($control) {
+        $option = $control->manager->get_setting('oxane_replace_search_bar');
+        return $option->value() == true ;
+
+    }
+
 }
 add_action('customize_register','oxane_customize_register_header');

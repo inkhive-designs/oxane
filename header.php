@@ -26,6 +26,11 @@ get_template_part('modules/header/head'); ?>
 			 rt_slider::render('framework/featured-components/slider', 'nivo' );
 		} ?>
 
+    <?php if (!is_home() && is_front_page()) :
+        get_template_part('modules/hero/hero-top');
+    endif;
+    ?>
+
 	<div class="mega-container">
 		<?php get_template_part('/framework/featured-components/slider', 'postthumb' ); ?>
 		<?php get_template_part('/framework/featured-components/featured', 'posts' ); ?>

@@ -19,7 +19,7 @@
                 while ( $loop->have_posts() ) :
                     $loop->the_post(); ?>
                 <li>
-                    <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+                    <i class="fa fa-<?php echo get_theme_mod('oxane_motionbar_separator_fa'); ?>"></i><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
                 </li>
                 <?php endwhile;?>
                 <?php wp_reset_query(); ?>

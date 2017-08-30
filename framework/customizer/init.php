@@ -19,6 +19,7 @@ require_once get_template_directory().'/framework/customizer/header.php';
 require_once get_template_directory().'/framework/customizer/skins.php';
 require_once get_template_directory().'/framework/customizer/social-icons.php';
 require_once get_template_directory().'/framework/customizer/motion-bar.php';
+require_once get_template_directory().'/framework/customizer/front-pagebuilder.php';
 require_once get_template_directory().'/framework/customizer/_customizer_controls.php';
 require_once get_template_directory().'/framework/customizer/_sanitization.php';
 require_once get_template_directory().'/framework/customizer/_miscscripts.php';
