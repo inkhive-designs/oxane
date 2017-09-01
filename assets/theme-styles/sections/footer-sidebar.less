@@ -38,12 +38,17 @@
           tr {
             td.pad{
               background: @onaccent;
+              pointer-events: none;
             }
             td {
               background: @footer-bg;
               border: 1px solid #fff;
               text-align: center;
               padding: 8px;
+              &:hover {
+                background: @accent;
+                color:@onaccent;
+              }
               &:last-child {
                 color: red;
               }
@@ -53,9 +58,6 @@
               background:@accent;
               color: @onaccent;
             }
-          }
-          &:hover {
-            background: #fff;
           }
         }
       }
