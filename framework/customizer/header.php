@@ -1,6 +1,8 @@
 <?php
 
 function oxane_customize_register_header($wp_customize){
+
+    $wp_customize->remove_control('display_header_text');
     //Logo Settings
     $wp_customize->add_section( 'title_tagline' , array(
         'title'      => __( 'Title, Tagline & Logo', 'oxane' ),
@@ -121,21 +123,6 @@ function oxane_customize_register_header($wp_customize){
             'label'    => __( 'Hide Title and Tagline.', 'oxane' ),
             'section'  => 'title_tagline',
             'type'     => 'checkbox',
-        )
-    );
-
-    $wp_customize->add_setting(
-        'oxane_branding_below_logo',
-        array( 'sanitize_callback' => 'oxane_sanitize_checkbox' )
-    );
-
-    $wp_customize->add_control(
-        'oxane_branding_below_logo', array(
-            'settings' => 'oxane_branding_below_logo',
-            'label'    => __( 'Display Site Title and Tagline Below the Logo.', 'oxane' ),
-            'section'  => 'title_tagline',
-            'type'     => 'checkbox',
-            'active_callback' => 'oxane_title_visible'
         )
     );
 

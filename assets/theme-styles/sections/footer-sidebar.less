@@ -25,21 +25,38 @@
           margin-top: 10px;
           margin-bottom: 15px;
         }
-        thead th {
-          padding-bottom: 10px;
-          text-align:center;
+        thead {
+          th {
+            padding-bottom: 10px;
+            text-align:center;
+            &[title="Sunday"]{
+              color:red;
+            }
+          }
         }
-        tbody td {
-          background: @footer-bg;
-          border: 1px solid #fff;
-          text-align: center;
-          padding:8px;
+        tbody {
+          tr {
+            td.pad{
+              background: @onaccent;
+            }
+            td {
+              background: @footer-bg;
+              border: 1px solid #fff;
+              text-align: center;
+              padding: 8px;
+              &:last-child {
+                color: red;
+              }
+            }
+            td#today{
+              font-weight:600;
+              background:@accent;
+              color: @onaccent;
+            }
+          }
           &:hover {
             background: #fff;
           }
-        }
-
-        thead{
         }
       }
     }

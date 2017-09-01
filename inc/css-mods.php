@@ -39,9 +39,9 @@ function oxane_custom_css_mods() {
 	endif;
 	
 	//Exception: IMage transform origin should be left on Left Alignment, i.e. Default
-	if ( !get_theme_mod('oxane_center_logo') ) :
+	if ( get_theme_mod('oxane_center_logo') == '' ) :
 		echo "#masthead #site-logo img { transform-origin: left; }";
-	endif;	
+	endif;
 	
 	
 	//Modify Menu bars, if header image has been set

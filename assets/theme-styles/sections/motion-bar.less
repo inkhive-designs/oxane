@@ -76,9 +76,34 @@
         display: none;
       }
     }
-    .motion-content{
-      top: 54px;
-      padding-top: 0;
+    .motion-content {
+      float: right;
+      padding: 3px 3%;
+      position: relative;
+      padding: 10px 0;
+      width: 100%;
+      left: 0;
+      right: 0;
+      #m-ticker {
+        color: @onaccent;
+        font-size: 15px !important;
+        font-weight: 600;
+        z-index: 9;
+        padding-top: 12px;
+        height: 44px;
+        left:19px;
+        overflow: hidden;
+        position: relative;
+        li {
+          i {
+            padding: 0 8px 0 10px;
+            color: @onaccent;
+          }
+          a {
+            color: @onaccent;
+          }
+        }
+      }
     }
   }
 }

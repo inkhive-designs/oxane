@@ -25,8 +25,8 @@
             <header class="entry-header">
                 <h1 class="entry-title title-font"><a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a></h1>
             </header><!-- .entry-header -->
-            <div class="category"><?php the_category(); ?></div>
         </div>
+        <div class="category"><?php the_category(); ?></div>
     </div>
 
 

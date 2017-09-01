@@ -47,6 +47,9 @@
   display: inline-block;
   float: left;
   text-align: left;
+  right: 5px;
+  position: relative;
+  z-index: 9;
   @media screen and (max-width: 767px) {
     text-align: center;
     float: none;
@@ -57,8 +60,19 @@
 #site-logo {
   display: inline-block;
   float: left;
+  max-height: 68px;
+  margin-right: 30px;
+  width: auto;
+  img{
+    max-height: 63px;
+    width: auto;
+    margin-top: 5px;
+  }
   @media screen and (max-width: 768px) {
-    float: none;
+    width: 100%;
+    img {
+      transform-origin: bottom !important;
+    }
   }
 }
 #social-search {
