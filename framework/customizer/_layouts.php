@@ -1,6 +1,7 @@
 <?php
 function oxane_customize_register_design_layouts( $wp_customize ){
     // Layout and Design
+    $wp_customize->get_section('background_image')->panel = 'oxane_design_panel';
     $wp_customize->add_panel( 'oxane_design_layouts_panel', array(
         'priority'       => 40,
         'title'          => __('Design & Layout','oxane'),

@@ -19,7 +19,7 @@ get_template_part('modules/header/head'); ?>
 		</div>
 	</div>
     <?php get_template_part('modules/header/masthead'); ?>
-    <?php get_template_part('modules/header/motion', 'bar'); ?>
+    <?php get_template_part('/framework/featured-components/motion', 'bar'); ?>
 
 
 	<?php if( class_exists('rt_slider') ) {

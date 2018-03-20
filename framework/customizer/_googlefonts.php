@@ -5,6 +5,7 @@ function oxane_customize_register_googlefonts($wp_customize){
         array(
             'title'     => __('Google Web Fonts','oxane'),
             'priority'  => 41,
+            'panel' => 'oxane_design_panel'
         )
     );
 

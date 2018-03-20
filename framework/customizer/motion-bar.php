@@ -7,6 +7,22 @@ function oxane_customize_register_motion_bar($wp_customize){
         array(
             'title'     => __('Motion Bar','oxane'),
             'priority'  => 35,
+            'panel' => 'oxane_fc_panel'
+        )
+    );
+
+    $wp_customize->add_setting(
+        'oxane_motionbar_enable',
+        array( 'sanitize_callback' => 'oxane_sanitize_checkbox' )
+    );
+
+    $wp_customize->add_control(
+        'oxane_motionbar_enable', array(
+            'settings' => 'oxane_motionbar_enable',
+            'label'    => __( 'Enable Motion Bar.','oxane' ),
+            'section'  => 'oxane_motionbar_section',
+            'type'     => 'checkbox',
+            'default'  => false
         )
     );
 
@@ -21,6 +37,7 @@ function oxane_customize_register_motion_bar($wp_customize){
             'section'  => 'oxane_motionbar_section',
             'label'    => __( 'Enter Title Text', 'oxane' ),
             'type'     => 'text',
+            'active_callback' => 'oxane_show_motionbar_options',
         )
     );
 
@@ -37,7 +54,8 @@ function oxane_customize_register_motion_bar($wp_customize){
             array(
                 'label'    => __('Category For Motion Bar Contents','oxane'),
                 'settings' => 'oxane_motionbar_content_cat',
-                'section'  => 'oxane_motionbar_section'
+                'section'  => 'oxane_motionbar_section',
+                'active_callback' => 'oxane_show_motionbar_options',
             )
         )
     );
@@ -62,6 +80,7 @@ function oxane_customize_register_motion_bar($wp_customize){
                 'bookmark' => __('Bookmark', 'oxane'),
                 'newspaper-o' => __('Newspaper', 'oxane'),
             ),
+            'active_callback' => 'oxane_show_motionbar_options',
         )
     );
 
@@ -70,6 +89,14 @@ function oxane_customize_register_motion_bar($wp_customize){
             return $input;
         else
             return '';
+    }
+
+    /* Active Callback Function */
+    function oxane_show_motionbar_options($control) {
+
+        $option = $control->manager->get_setting('oxane_motionbar_enable');
+        return $option->value() == true ;
+
     }
 }
 add_action('customize_register', 'oxane_customize_register_motion_bar');

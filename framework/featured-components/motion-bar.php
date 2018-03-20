@@ -1,4 +1,4 @@
-<?php if(get_theme_mod('oxane_motionbar_title_set') && get_theme_mod('oxane_motionbar_content_cat') !=''):?>
+<?php if(get_theme_mod('oxane_motionbar_enable') && get_theme_mod('oxane_motionbar_content_cat') !=''):?>
 <div id="motion-bar">
     <div class="container m-container">
         <?php if(get_theme_mod('oxane_motionbar_title_set')):?>

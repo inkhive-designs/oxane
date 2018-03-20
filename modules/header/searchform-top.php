@@ -8,7 +8,7 @@
                     //Display the Menu.
                     wp_nav_menu( array( 'theme_location' => 'short', 'walker' => $walker ) ); ?>
             </div>
-        <?php elseif('oxane_mobile_text'): ?>
+        <?php elseif('oxane_enable_email_mobile'): ?>
             <div id="top_bar">
                 <div class="contact">
                     <i class="fa fa-envelope"><p><?php echo get_theme_mod('oxane_email_text'); ?></p></i>

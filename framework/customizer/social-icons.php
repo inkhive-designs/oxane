@@ -4,6 +4,7 @@ function oxane_customize_register_social_icons($wp_customize){
     $wp_customize->add_section('oxane_social_section', array(
         'title' => __('Social Icons','oxane'),
         'priority' => 44,
+        'panel' => 'oxane_header_panel'
     ));
 
     $social_icon_styles = array(

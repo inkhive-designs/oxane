@@ -7,6 +7,7 @@ function oxane_customize_register_featured_posts($wp_customize){
         array(
             'title'     => __('Featured Posts Slider','oxane'),
             'priority'  => 35,
+            'panel' => 'oxane_fc_panel'
         )
     );
 
@@ -67,6 +68,7 @@ function oxane_customize_register_featured_posts($wp_customize){
         array(
             'title'     => __('Featured Posts','oxane'),
             'priority'  => 35,
+            'panel' => 'oxane_fc_panel'
         )
     );
 

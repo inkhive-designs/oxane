@@ -12,6 +12,12 @@
 function oxane_customize_register( $wp_customize ) {
     $wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
     $wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
+
+    $wp_customize->add_panel('oxane_fc_panel', array(
+        'title' => __('Featured Content Areas', 'oxane'),
+        'priority' => 30,
+        )
+    );
 }
 add_action( 'customize_register', 'oxane_customize_register' );
 
@@ -24,7 +30,6 @@ require_once get_template_directory().'/framework/customizer/_customizer_control
 require_once get_template_directory().'/framework/customizer/_sanitization.php';
 require_once get_template_directory().'/framework/customizer/_miscscripts.php';
 require_once get_template_directory().'/framework/customizer/_layouts.php';
-require_once get_template_directory().'/framework/customizer/_custom_css.php';
 require_once get_template_directory().'/framework/customizer/_googlefonts.php';
 require_once get_template_directory().'/framework/customizer/featured-posts.php';
 

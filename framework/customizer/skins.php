@@ -1,6 +1,7 @@
 <?php
 function oxane_customize_register_skin($wp_customize){
     $wp_customize->get_section('colors')->title = __('Theme Skin & Colors','oxane');
+    $wp_customize->get_section('colors')->panel = 'oxane_design_panel';
     $wp_customize->get_control('header_textcolor')->label = __('Site Title Color','oxane');
 
     $wp_customize->add_setting('oxane_header_desccolor', array(
